@@ -610,6 +610,17 @@ border-radius:50px;
 border:1px solid rgba(255,255,255,.08);
 }
 
+.contador-titulo{
+margin-top:70px;
+margin-bottom:25px;
+font-family:'Bebas Neue',sans-serif;
+font-size:50px;
+letter-spacing:6px;
+text-align:center;
+color:#fff;
+text-shadow:0 0 20px rgba(255,44,147,.5);
+}
+
 .disco{
 width:45px;
 height:45px;
@@ -619,6 +630,42 @@ display:flex;
 justify-content:center;
 align-items:center;
 animation:rotar 3s linear infinite;
+}
+.watermark-grid{
+position:fixed;
+inset:0;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+grid-template-rows:repeat(3,1fr);
+
+pointer-events:none;
+z-index:99999;
+overflow:hidden;
+}
+
+.watermark-grid span{
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-family:'Bebas Neue',sans-serif;
+
+font-size:clamp(45px,6vw,180px);
+
+font-weight:900;
+
+transform:rotate(-35deg);
+
+color:rgba(255,255,255,.39);
+
+text-shadow:
+0 0 15px rgba(255,44,147,.4),
+0 0 30px rgba(0,217,255,.3);
+
+letter-spacing:8px;
+
+user-select:none;
 }
 
 @keyframes rotar{
@@ -706,9 +753,263 @@ font-size:28px;
 
 }
 
+/* RESPONSIVE PREMIUM INVITART */
+
+img{
+max-width:100%;
+height:auto;
+display:block;
+}
+
+.hero,
+.seccion{
+width:100%;
+overflow:hidden;
+}
+
+.fecha-box,
+.contador{
+width:100%;
+justify-content:center;
+}
+
+.btn-confirmar,
+.btn-mapa{
+max-width:100%;
+word-break:break-word;
+}
+
+.timeline-card,
+.fecha-card,
+.frase-box{
+width:100%;
+}
+
+@media (max-width:1024px){
+
+.imagenes-premium{
+grid-template-columns:1fr;
+max-width:700px;
+margin:auto;
+margin-top:50px;
+}
+
+.foto{
+height:420px;
+}
+
+}
+
+@media (max-width:768px){
+
+.hero{
+padding:120px 15px 60px;
+}
+
+.titulo{
+font-size:80px;
+letter-spacing:4px;
+}
+
+.subtitulo{
+font-size:20px;
+letter-spacing:2px;
+line-height:1.4;
+}
+
+.nombre{
+font-size:70px;
+letter-spacing:3px;
+}
+
+.fecha-box{
+flex-direction:column;
+align-items:center;
+}
+
+.fecha-card{
+width:100%;
+max-width:450px;
+}
+
+.contador{
+margin-top:50px;
+gap:12px;
+}
+
+.item-contador{
+width:95px;
+height:95px;
+}
+
+.item-contador span{
+font-size:30px;
+}
+
+.foto{
+height:340px;
+}
+
+.timeline-card h3{
+font-size:28px;
+}
+
+.frase-box{
+padding:40px 20px;
+}
+
+.frase-box p{
+font-size:22px;
+}
+
+}
+
+@media (max-width:480px){
+
+.hero{
+padding-top:110px;
+}
+
+.badge{
+font-size:10px;
+letter-spacing:2px;
+}
+
+.titulo{
+font-size:58px;
+line-height:.95;
+}
+
+.subtitulo{
+font-size:15px;
+padding:0 10px;
+}
+
+.nombre{
+font-size:48px;
+}
+
+.and{
+font-size:28px;
+}
+
+.foto{
+height:260px;
+border-radius:25px;
+}
+
+.fecha-card{
+padding:20px;
+}
+
+.fecha-card h3{
+font-size:12px;
+}
+
+.fecha-card p{
+font-size:22px;
+}
+
+.contador-titulo{
+font-size:38px;
+}
+
+.item-contador{
+width:75px;
+height:75px;
+border-radius:20px;
+}
+
+.item-contador span{
+font-size:22px;
+}
+
+.item-contador p{
+font-size:10px;
+}
+
+.timeline-card{
+padding:22px;
+}
+
+.timeline-card h3{
+font-size:22px;
+}
+
+.timeline-card .hora{
+font-size:14px;
+}
+
+.frase-box{
+padding:30px 15px;
+}
+
+.frase-box p{
+font-size:17px;
+line-height:1.7;
+}
+
+.btn-confirmar{
+width:90%;
+justify-content:center;
+font-size:16px;
+padding:18px;
+}
+
+.dj-bar{
+top:10px;
+right:10px;
+transform:scale(.80);
+transform-origin:top right;
+}
+
+footer{
+font-size:11px;
+letter-spacing:1px;
+}
+
+}
+
+@media (max-width:360px){
+
+.titulo{
+font-size:48px;
+}
+
+.nombre{
+font-size:40px;
+}
+
+.item-contador{
+width:65px;
+height:65px;
+}
+
+.item-contador span{
+font-size:18px;
+}
+
+.frase-box p{
+font-size:15px;
+}
+
+}
+
 </style>
 </head>
 <body>
+
+<div class="watermark-grid">
+    <span>VISTA PREVIA</span>
+    <span>INVITART</span>
+    <span>NO PAGADA</span>
+    <span>VISTA PREVIA</span>
+    <span>INVITART</span>
+    <span>NO PAGADA</span>
+    <span>VISTA PREVIA</span>
+    <span>INVITART</span>
+    <span>NO PAGADA</span>
+</div>
 
 <div class="fondo-luces">
 <div class="luz luz1"></div>
@@ -781,22 +1082,22 @@ Celebrando el cumpleaños
 DOBLE
 FIESTA
 </h1>
-
 <div class="subtitulo">
-UNA NOCHE • DOS CUMPLEAÑOS • PURA FIESTA
+SANDRA 30 • JORDAN 32 • UNA NOCHE INOLVIDABLE
 </div>
 
 <div class="nombres-box">
 
 <div class="nombre">
-BRAYAN
+SANDRA
 </div>
 
 <div class="and">&</div>
 
 <div class="nombre">
-KAREN
+JORDAN
 </div>
+
 
 </div>
 
@@ -811,18 +1112,23 @@ KAREN
 
 <div class="fecha-card">
 <h3>FECHA</h3>
-<p>18 OCT</p>
+<p>03 JUL</p>
 </div>
 
 <div class="fecha-card">
 <h3>HORA</h3>
-<p>8:00 PM</p>
+<p>6:00 PM</p>
 </div>
 
 <div class="fecha-card">
 <h3>LUGAR</h3>
-<p>SALÓN LUX</p>
+<p>QUINTA BOLET</p>
 </div>
+</div>
+
+<div class="contador-titulo">
+
+FALTAN
 
 </div>
 
@@ -861,48 +1167,35 @@ ITINERARIO
 <div class="timeline-item left">
 <div class="timeline-card">
 <h3>Recepción</h3>
-<div class="hora">8:00 PM</div>
-<p>Comienza la gran noche con luces, música y mucho ambiente.</p>
-<a href="#" class="btn-mapa">
-<i class="fas fa-location-dot"></i>
-Cómo llegar
-</a>
-</div>
-</div>
-
-<div class="timeline-item right">
-<div class="timeline-card">
-<h3>DJ en Vivo</h3>
-<div class="hora">10:00 PM</div>
-<p>La pista se prende con el mejor ambiente sonidero.</p>
-<a href="#" class="btn-mapa">
-<i class="fas fa-music"></i>
+<div class="hora">6:00 PM</div>
+<p>Te esperamos para celebrar juntos esta noche tan especial.</p>
+<a href="https://maps.app.goo.gl/r1NLiCsW6NvLVWTc6" class="btn-mapa" target="_blank">
+<i class="fas fa-map-location-dot"></i>
 Ver ubicación
 </a>
 </div>
 </div>
 
-<div class="timeline-item left">
-<div class="timeline-card">
-<h3>Pastel & Shots</h3>
-<div class="hora">11:30 PM</div>
-<p>Momento de cantar, brindar y romper la pista.</p>
-<a href="#" class="btn-mapa">
-<i class="fas fa-champagne-glasses"></i>
-Fiesta
-</a>
-</div>
-</div>
 
 <div class="timeline-item right">
 <div class="timeline-card">
-<h3>After Party</h3>
-<div class="hora">1:00 AM</div>
-<p>Seguimos bailando hasta que el cuerpo aguante.</p>
-<a href="#" class="btn-mapa">
-<i class="fas fa-fire"></i>
-Seguir fiesta
-</a>
+<h3>Grupo Adriana del Valle</h3>
+<div class="hora">7:30 PM</div>
+<p>Disfrutemos de música en vivo y una gran celebración.</p>
+<div class="hora">
+🎵 Música en Vivo
+</div>
+</div>
+</div>
+
+<div class="timeline-item left">
+<div class="timeline-card">
+<h3>Brissa Colombiana</h3>
+<div class="hora">11:30 PM</div>
+<p>Continuemos la fiesta con el mejor ambiente de la noche.</p>
+<div class="hora">
+🔥 Ambiente Colombiano
+</div>
 </div>
 </div>
 
@@ -910,23 +1203,37 @@ Seguir fiesta
 
 <div class="frase-box">
 <p>
-Prepárate para vivir una noche llena de música, luces, emoción y recuerdos inolvidables.
+Hoy celebramos la vida, la amistad y los momentos que se convierten en recuerdos para siempre. Gracias por acompañarnos.
 </p>
 </div>
 
+<div class="frase-box">
+
+
+<p>
+🏊 Habrá alberca durante el evento. Desde las 5:00pm. Por seguridad, agradecemos supervisar en todo momento a los niños.
+</p>
+
+</div>
+
 <div class="confirmar">
-<a href="https://wa.me/5210000000000" class="btn-confirmar" target="_blank">
+
+<a href="https://wa.me/5258121959998?text=Hola,%20confirmo%20mi%20asistencia%20al%20cumpleaños%20de%20Sandra%20y%20Jordan."
+class="btn-confirmar"
+target="_blank">
+
 <i class="fab fa-whatsapp"></i>
 CONFIRMAR ASISTENCIA
+
 </a>
+
 </div>
 
 </section>
 
 <footer>
-NOS VEMOS EN LA PISTA ✦ DOBLE FIESTA 2026
+SANDRA ✦ JORDAN ✦ JULIO 2026
 </footer>
-
 </main>
 
 <audio id="audio"></audio>
@@ -938,13 +1245,21 @@ const contenido = document.getElementById('contenido');
 const sobreSection = document.getElementById('sobreSection');
 
 const canciones = [
-"musica/pes.mp3",
-"musica/po.mp3"
+{
+archivo:"musica/adriana.mp3",
+inicio:45,
+fin:86
+},
+{
+archivo:"musica/brisa.mp3",
+inicio:20,
+fin:90
+}
 ];
 
 const nombresCanciones = [
-'PES',
-'PO'
+'ADRIANA',
+'BRISA'
 ];
 
 let indice = 0;
@@ -958,20 +1273,28 @@ const musicIcon = document.getElementById('musicIcon');
 audio.volume = 0.85;
 
 /* reproducir canción */
-
 function reproducirCancion(){
 
-audio.src = canciones[indice];
+audio.src = canciones[indice].archivo;
+
+audio.addEventListener('loadedmetadata',()=>{
+
+audio.currentTime = canciones[indice].inicio;
 
 audio.play();
+
+},{once:true});
 
 songTitle.innerHTML = nombresCanciones[indice];
 
 }
 
-/* cuando termina cambia */
+setInterval(()=>{
 
-audio.addEventListener('ended',()=>{
+if(
+!audio.paused &&
+audio.currentTime >= canciones[indice].fin
+){
 
 indice++;
 
@@ -981,7 +1304,9 @@ indice = 0;
 
 reproducirCancion();
 
-});
+}
+
+},500);
 
 /* abrir sobre */
 
@@ -1026,8 +1351,7 @@ musicIcon.className = "fas fa-volume-mute";
 </script>
 
 <script>
-
-const fechaEvento = new Date('2026-10-18T20:00:00').getTime();
+const fechaEvento = new Date('2026-07-03T18:00:00').getTime();
 
 setInterval(()=>{
 
@@ -1092,7 +1416,7 @@ ctx.stroke();
 });
 
 actualizar();
-requestAnimationFrame(dibujar);
+animacionConfetti = requestAnimationFrame(dibujar)
 
 }
 
@@ -1119,9 +1443,26 @@ x:Math.random()*canvas.width
 
 }
 
+let animacionConfetti;
+
 function lluviaConfetti(){
+
+piezas = [];
+
 crearConfetti();
+
 dibujar();
+
+setTimeout(()=>{
+
+cancelAnimationFrame(animacionConfetti);
+
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+piezas = [];
+
+},4000);
+
 }
 
 window.addEventListener('resize',()=>{
